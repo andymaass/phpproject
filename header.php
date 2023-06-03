@@ -2,7 +2,7 @@
 <head>
    <title>Aufagbenverwaltung - <?php
                 // Ausgabe der Variable $title (Definiert in der jeweiligen, aufgerufenen Seite) um den Seitentitel in dem Browserfenster anzuzeigen
-                echo $title; 
+                echo $pagetitle; 
                ?></title>
 <head>
 <body>
@@ -31,7 +31,7 @@
         <h4>
             <?php
                 // Ausgabe des Inhaltes der Variable $title fÃ¼r die SeitenÃ¼berschrift
-                echo $title; 
+                echo $pagetitle; 
             ?>
         </h4>
 
