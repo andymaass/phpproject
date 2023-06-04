@@ -5,7 +5,7 @@ include "header.php";
 ?>
 Hier kommt der Seiteninhalt rein!
 <?php
-include "functions.php"
+include "functions.php";
 
 $p = new Tasks();
 
@@ -67,9 +67,8 @@ if(isset($_POST["title"]))
 {
     $p->Titel = $_POST['Titel'];
     $p->Beschreibung = $_POST['Beschreibung'];
-    $p->comment = $_POST['comment'];
-    $p->created_at = $_POST['Erstellungsdatum'];
-    $p->updated_at = $_POST['Faelligkeitsdatum'];
+    $p->Erstellungsdatum = $_POST['Erstellungsdatum'];
+    $p->Faelligkeitsdatum = $_POST['Faelligkeitsdatum'];
 
     $p->save();
 
