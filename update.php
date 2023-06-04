@@ -1,5 +1,5 @@
 <?php
-include_once("Tasks.php");
+include_once("funtions.php");
 
 $p = new Tasks();
 
@@ -12,11 +12,10 @@ if (isset($_POST['id']))
 {
     $tasks = $p->fetch($_POST['id']);
 
-    $p->title = $_POST['title'];
-    $p->description = $_POST['description'];
-    $p->comment = $_POST['comment'];
-    $p->created_at = $_POST['created_at'];
-    $p->updated_at = $_POST['updated_at'];
+    $p->Titel = $_POST['Titel'];
+    $p->Beschreibung = $_POST['Beschreibung'];
+    $p->Erstellungsdatum = $_POST['Erstellungsdatum'];
+    $p->Faelligkeitsdatum = $_POST['Faelligkeitsdatum'];
 
     $p->updated($_POST['id']);
 }
@@ -30,11 +29,10 @@ echo'<td>created_at</td><td>updated_at</td><td colspan="2">&nbsp;</td></tr>';
 
 echo "<tr>";
 echo '<td><input type="text" name="id" value="' . $tasks[0]['id'] . '"></td>';
-echo '<td><input type="text" name="title" value="' . $tasks[0]['title'] . '"></td>';
-echo '<td><input type="text" name="description" value="' . $tasks[0]['description'] . '"></td>';
-echo '<td><input type="text" name="comment" value="' . $tasks[0]['comment'] . '"></td>';
-echo '<td><input type="text" name="created_at" value="' . $tasks[0]['created_at'] . '"></td>';
-echo '<td><input type="text" name="updated_at" value="' . $tasks[0]['updated_at'] . '"></td>';
+echo '<td><input type="text" name="Titel" value="' . $tasks[0]['Titel'] . '"></td>';
+echo '<td><input type="text" name="Beschreibung" value="' . $tasks[0]['Beschreibung'] . '"></td>';
+echo '<td><input type="text" name="Erstellungsdatum" value="' . $tasks[0]['Erstellungsdatum'] . '"></td>';
+echo '<td><input type="text" name="Faelligkeitsdatum" value="' . $tasks[0]['Faelligkeitsdatum'] . '"></td>';
 echo "</tr>";
 
 echo "</table><br>";
@@ -44,7 +42,7 @@ if($_POST)
 {
 ?>
 <p>Der Datensatz wurde geändert.</p>
-<p><a href="aufgabenverwaltung.php">zurück</a></p>
+<p><a href="index.php">zurück</a></p>
 <?php
 }
 ?>

@@ -5,11 +5,10 @@ echo "$heute";
 class Tasks
 {
     public $id;
-    public $title;
-    public $description;
-    public $comment;
-    public $created_at;
-    public $updated_at;
+    public $Titel;
+    public $Beschreibung;
+    public $Erstellungsdatum;
+    public $Faelligkeitsdatum;
     public $con1;
 
     //CRUD Create, Read, Update, Delete
@@ -27,8 +26,8 @@ class Tasks
 
         while ($row = $res->fetch_assoc()) {
     
-            $taskX = array('id'=>$row['id'], 'title'=>$row['title'], 'description'=>$row['description'], 'comment'=>$row['comment'],'created_at'=>$row['created_at']
-            , 'updated_at'=>$row['updated_at']);
+            $taskX = array('id'=>$row['id'], 'Titel'=>$row['Titel'], 'Beschreibung'=>$row['Beschreibung'], 'Erstellungsdatum'=>$row['Erstellungsdatum']
+            , 'Faelligkeitsdatum'=>$row['Faelligkeitsdatum']);
             $tasks[] = $taskX;
 
         }
@@ -44,8 +43,8 @@ class Tasks
 
         while ($row = $res->fetch_assoc()) {
     
-            $taskX = array('id'=>$row['id'], 'title'=>$row['title'], 'description'=>$row['description'], 'comment'=>$row['comment'],'created_at'=>$row['created_at']
-            , 'updated_at'=>$row['updated_at']);
+            $taskX = array('id'=>$row['id'], 'Titel'=>$row['Titel'], 'Beschreibung'=>$row['Beschreibung'], 'Erstellungsdatum'=>$row['Erstellungsdatum']
+            , 'Faelligkeitsdatum'=>$row['Faelligkeitsdatum']);
             $tasks[] = $taskX;
         }
 
@@ -54,14 +53,13 @@ class Tasks
 
     public function save()
     {
-        $title =  $this->title;
-        $description = $this->description;
-        $comment = $this->comment;
-        $created_at = $this->created_at;
-        $updated_at = $this->updated_at;
+        $Titel =  $this->Titel;
+        $Beschreibung = $this->Beschreibung;
+        $Erstellungsdatum = $this->Erstellungsdatum;
+        $Faelligkeitsdatum = $this->Faelligkeitsdatum;
 
-        echo $sql = "INSERT INTO tasks (title, description, comment, created_at, updated_at)" .
-                "VALUES ('" . $title ."','" . $description ."','" . $comment . "','" . $created_at . "','" . $updated_at ."')";
+        echo $sql = "INSERT INTO tasks (Titel, Beschreibung, Erstellungsdatum, Faelligkeitsdatum)" .
+                "VALUES ('" . $Titel ."','" . $Beschreibung ."','" . $Erstellungsdatum . "','" . $Faelligkeitsdatum ."')";
         if ($this->con1->query($sql) === TRUE) {
         
             return true;
@@ -78,30 +76,29 @@ class Tasks
 
     public function updated($id)
     {
-        $title =  $this->title;
-        $description = $this->description;
-        $comment = $this->comment;
-        $created_at = $this->created_at;
-        $updated_at = $this->updated_at;
+        $Titel =  $this->Titel;
+        $Beschreibung = $this->Beschreibung;
+        $Erstellungsdatum = $this->Erstellungsdatum;
+        $Faelligkeitsdatum = $this->Faelligkeitsdatum;
 
-        $sql = "UPDATE tasks SET title = '" . $title . "', description = '" . $description . "', comment = '" . $comment . "', created_at = '" . $created_at . "', 
-        updated_at = '" . $updated_at . "' WHERE id = $id";
+        $sql = "UPDATE tasks SET Titel = '" . $Titel . "', Beschreibung = '" . $Beschreibung . "', Erstellungsdatum = '" . $Erstellungsdatum . "', 
+        Faelligkeitsdatum = '" . $Faelligkeitsdatum . "' WHERE id = $id";
 
         if ($this->con1->query($sql) === TRUE) {
             return true;
         }
     }
 
-    public function search($title)
+    public function search($Titel)
     {
         $tasks = array();
 
-        $res = $this->con1->query("SELECT * FROM tasks WHERE title like '%$title%'");
+        $res = $this->con1->query("SELECT * FROM tasks WHERE Titel like '%$Titel%'");
 
         while ($row = $res->fetch_assoc()) {
     
-            $taskX = array('id'=>$row['id'], 'title'=>$row['title'], 'description'=>$row['description'], 'comment'=>$row['comment'],'created_at'=>$row['created_at']
-            , 'updated_at'=>$row['updated_at']);
+            $taskX = array('id'=>$row['id'], 'Titel'=>$row['Titel'], 'Beschreibung'=>$row['Beschreibung'], 'Erstellungsdatum'=>$row['Erstellungsdatum']
+            , 'Faelligkeitsdatum'=>$row['Faelligkeitsdatum']);
             $tasks[] = $taskX;
         }
 

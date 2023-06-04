@@ -5,5 +5,9 @@ include "header.php";
 ?>
 Hier kommt der Seiteninhalt rein!
 <?php
+include "functions.php"
+?>
+
+<?php
 include "footer.php";
 ?>
