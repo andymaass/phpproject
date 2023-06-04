@@ -1,5 +1,5 @@
 <?php
-include_once("funtions.php");
+include "funtions.php";
 
 $p = new Tasks();
 
