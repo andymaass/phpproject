@@ -12,6 +12,7 @@ $p = new Tasks();
 $tasks = $p->fetchAll();
 
 $heute = date("Y-m-d");
+
 echo "<table border=\"1\">";
 echo '<tr><td>ID</td><td>Titel</td><td>Beschreibung</td>
 <td>Erstellungsdatum</td><td>Faelligkeitsdatum</td><td colspan="2">&nbsp;</td></tr>';
