@@ -24,8 +24,8 @@ echo "<html>";
 echo '<body><p>Aufgabenverwaltung</p>';
 echo '<form action="update.php" method="post">';
 echo "<table border=\"1\">";
-echo '<tr><td>ID</td><td>Title</td><td>Description</td><td>Comment</td>';
-echo'<td>created_at</td><td>updated_at</td><td colspan="2">&nbsp;</td></tr>';
+echo '<tr><td>ID</td><td>Titel</td><td>Beschreibung</td>';
+echo'<td>Erstellungsdatum</td><td>Faelligkeitsdatum</td><td colspan="2">&nbsp;</td></tr>';
 
 echo "<tr>";
 echo '<td><input type="text" name="id" value="' . $tasks[0]['id'] . '"></td>';
