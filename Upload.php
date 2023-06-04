@@ -1,6 +1,6 @@
 <?php
 // Die Variable $title wird vor der Einbindung von header.php definiert damit sie in dieser Datei verfÃ¼gbar ist
-$pagetitle = "Seite 2";
+$pagetitle = "Upload";
 include "header.php";
 ?>
 Hier kommt der Seiteninhalt rein!

@@ -3,7 +3,7 @@
 $pagetitle = "Startseite";
 include "header.php";
 ?>
-Hier kommt der Seiteninhalt rein!
+Aufgaben:
 <?php
 include "functions.php";
 
