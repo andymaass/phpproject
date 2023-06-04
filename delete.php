@@ -1,5 +1,5 @@
 <?php
-include_once("functions.php");
+include "functions.php";
 
 $p = new Tasks();
 $delete = $p->delete($_GET['id']);
