@@ -47,16 +47,16 @@ Neu erstellen:
         <td><input type="text" name="Titel" value=""/></td>
     </tr>
     <tr>
-        <td><label>Description</label></td>
+        <td><label>Beschreibung</label></td>
         <td><input type="text" name="Beschreibung" value=""/></td>
     </tr>
     <tr>
-        <td><label>created_at</label></td>
+        <td><label>Erstellungsdatum</label></td>
         <td><input type="text" name="Erstellungsdatum" value="<?php echo $heute; ?>"/>
         </td>
     </tr>
     <tr>
-        <td><label>updated_at</label></td>
+        <td><label>Faelligkeitsdatum</label></td>
         <td><input type="text" name="Faelligkeitsdatum" value="<?php echo $heute; ?>"/></td>
     </tr>
 </table>
