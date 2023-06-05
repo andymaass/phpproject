@@ -45,7 +45,10 @@ $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
     </form>
 <?php
 // txt datei filtern und in datebankschreiben
+    include "functions.php";
+
     
+
     $dateiname = "textdatei.txt";
     $uploadDir = 'uploads/';
 
@@ -59,10 +62,17 @@ $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
     $inhalt = file_get_contents($dateipfad);
 
 
-    $titel = getKeywordValue($inhalt, "Titel");
-    $beschreibung = getKeywordValue($inhalt, "Beschreibung");
-    $erstellungsdatum = getKeywordValue($inhalt, "Erstellungsdatum");
-    $faelligkeitsdatum = getKeywordValue($inhalt, "Fälligkeitsdatum");
+    $Titel = getKeywordValue($inhalt, "Titel");
+    $Beschreibung = getKeywordValue($inhalt, "Beschreibung");
+    $Erstellungsdatum = getKeywordValue($inhalt, "Erstellungsdatum");
+    $Faelligkeitsdatum = getKeywordValue($inhalt, "Fälligkeitsdatum");
+
+    echo $sql = "INSERT INTO tasks (Titel, Beschreibung, Erstellungsdatum, Faelligkeitsdatum)" .
+                "VALUES ('" . $Titel ."','" . $Beschreibung ."','" . $Erstellungsdatum . "','" . $Faelligkeitsdatum ."')";
+        if ($this->con1->query($sql) === TRUE) {
+        
+            return true;
+        }
 
 ?>
 
