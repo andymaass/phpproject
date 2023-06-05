@@ -5,7 +5,9 @@
                 echo $pagetitle; 
                ?></title>
 <head>
-    
+<head>
+  <link rel="stylesheet" type="text/css" href="C:\Users\andy3_000\Downloads\phpproject\style.css">
+</head>
 <body>
 
 <!-- Tabelle fÃ¼r das Seitenlayout erstellen -->
