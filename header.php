@@ -5,6 +5,7 @@
                 echo $pagetitle; 
                ?></title>
 <head>
+    
 <body>
 
 <!-- Tabelle fÃ¼r das Seitenlayout erstellen -->
