@@ -46,12 +46,9 @@ $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
 <?php
 // txt datei filtern und in datebankschreiben
     include "functions.php";
-
-    
-
     $dateiname = "textdatei.txt";
     $uploadDir = 'uploads/';
-
+    
     function getKeywordValue($text, $keyword) {
         $pattern = '/' . $keyword . ': (.+)/i';
         preg_match($pattern, $text, $matches);
