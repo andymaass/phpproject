@@ -3,7 +3,7 @@
 $pagetitle = "Upload";
 include "header.php";
 ?>
-Hier kommt der Seiteninhalt rein!
+
 <?php
 
 $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
@@ -43,6 +43,28 @@ $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
         <input type="file" name="file" accept="application/txt" required>
         <input type="submit" value="Datei hochladen">
     </form>
+<?php
+// txt datei filtern und in datebankschreiben
+    
+    $dateiname = "textdatei.txt";
+    $uploadDir = 'uploads/';
+
+    function getKeywordValue($text, $keyword) {
+        $pattern = '/' . $keyword . ': (.+)/i';
+        preg_match($pattern, $text, $matches);
+        return isset($matches[1]) ? $matches[1] : '';
+    }
+
+    $dateipfad = $uploadDir . '/' . $dateiname;
+    $inhalt = file_get_contents($dateipfad);
+
+
+    $titel = getKeywordValue($inhalt, "Titel");
+    $beschreibung = getKeywordValue($inhalt, "Beschreibung");
+    $erstellungsdatum = getKeywordValue($inhalt, "Erstellungsdatum");
+    $faelligkeitsdatum = getKeywordValue($inhalt, "Fälligkeitsdatum");
+
+?>
 
 <?php
 include "footer.php";
