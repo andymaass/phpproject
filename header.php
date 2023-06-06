@@ -6,7 +6,7 @@
                ?></title>
 <head>
 <head>
-  <link rel="stylesheet" type="text/css" href="C:\Users\andy3_000\Downloads\phpproject\style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
