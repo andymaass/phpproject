@@ -1,5 +1,5 @@
-Titel=Aufgabe3
-Beschreibung=test3
-Erstellungsdatum=2023-06-05
-Faelligkeitsdatum=2023-06-05
+Titel:Aufgabe3
+Beschreibung:test3
+Erstellungsdatum:2023-06-05
+Faelligkeitsdatum:2023-06-05
  

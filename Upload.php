@@ -63,10 +63,11 @@ $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
     $Beschreibung = getKeywordValue($inhalt, "Beschreibung");
     $Erstellungsdatum = getKeywordValue($inhalt, "Erstellungsdatum");
     $Faelligkeitsdatum = getKeywordValue($inhalt, "Fälligkeitsdatum");
+    $task= new Tasks();
 
     $sql = "INSERT INTO tasks (Titel, Beschreibung, Erstellungsdatum, Faelligkeitsdatum)" .
                 "VALUES ('" . $Titel ."','" . $Beschreibung ."','" . $Erstellungsdatum . "','" . $Faelligkeitsdatum ."')";
-        if ($this->con1->query($sql) === TRUE) {
+        if ($task->con1->query($sql) === TRUE) {
         
             return true;
         }
