@@ -49,28 +49,26 @@ $uploadDir = 'uploads/'; // Verzeichnis zum Speichern der hochgeladenen Dateien
     $dateiname = "textdatei.txt";
     $uploadDir = 'uploads/';
     
-    function getKeywordValue($text, $keyword) {
-        $pattern = '/' . $keyword . ': (.+)/i';
-        preg_match($pattern, $text, $matches);
-        return isset($matches[1]) ? $matches[1] : '';
-    }
 
     $dateipfad = $uploadDir . '/' . $dateiname;
-    $inhalt = file_get_contents($dateipfad);
-
-
-    $Titel = getKeywordValue($inhalt, "Titel");
-    $Beschreibung = getKeywordValue($inhalt, "Beschreibung");
-    $Erstellungsdatum = getKeywordValue($inhalt, "Erstellungsdatum");
-    $Faelligkeitsdatum = getKeywordValue($inhalt, "Fälligkeitsdatum");
+    $file  = fopen($dateipfad, "r");
     $task= new Tasks();
 
-    $sql = "INSERT INTO tasks (Titel, Beschreibung, Erstellungsdatum, Faelligkeitsdatum)" .
-                "VALUES ('" . $Titel ."','" . $Beschreibung ."','" . $Erstellungsdatum . "','" . $Faelligkeitsdatum ."')";
+    while(($line = fgets($file)) !== false)
+    {
+        $txt=json_decode($line);
+    
+
+        $sql = "INSERT INTO tasks (Titel, Beschreibung, Erstellungsdatum, Faelligkeitsdatum)" .
+                "VALUES ('" . $txt->Titel ."','" . $txt->Beschreibung ."','" . $txt->Erstellungsdatum . "','" . $txt->Faelligkeitsdatum ."')";
         if ($task->con1->query($sql) === TRUE) {
         
             return true;
         }
+    }
+
+    
+    
 
 ?>
 
